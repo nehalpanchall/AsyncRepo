@@ -1,4 +1,6 @@
-* {
-  margin: 0px;
-  padding: 0px;
+button {
+  padding: 20px;
+  margin: 20px;
+  border: 2px solid;
+  border-radius: 5px;
 }
