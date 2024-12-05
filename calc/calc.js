@@ -1,13 +1,13 @@
 let display = document.querySelector(".cal-screen");
 
-function passVal(val) {
+let passVal = (val) => {
   display.value += val;
-}
+};
 
-function clearDisplay() {
+let clearDisplay = () => {
   display.value = "";
-}
+};
 
-function total() {
+let total = () => {
   display.value = eval(display.value);
-}
+};
