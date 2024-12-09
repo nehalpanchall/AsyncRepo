@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Default Operator</title>
+  </head>
+  <body>
+    <h1>If alternatives</h1>
+
+    <h2>
+      Syntax:
+      <span style="text-decoration: underline">Value ?? defaultValue</span>
+    </h2>
+
+    <p>
+      <b>Null and Undefined </b> are the only falsy value for default operator
+
+      <span style="text-decoration: line-through; color: red" ;
+        >{False, 0, Nan, ' ' (Empty String)}
+      </span>
+    </p>
+  </body>
+
+  <script>
+    let age = false; // false
+    let age1 = 0; // 0
+    let age2; // 18
+    let age3 = 18 / "Nehal"; // NaN
+    let age4 = null; // 18
+    let age5 = ""; // ""
+
+    let finalAge = age5 ?? 18;
+
+    console.log(finalAge);
+  </script>
+</html>
