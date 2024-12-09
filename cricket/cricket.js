@@ -1,3 +1,9 @@
+const matchScore = {
+  tie: 0,
+  win: 0,
+  lose: 0,
+};
+
 const choice = (val) => {
   if (val == 1) {
     return `Bat`;
@@ -19,18 +25,38 @@ const bat = (val) => {
   let compMsg = choice(computerVal);
 
   if (computerVal == val) {
+    matchScore.tie++;
     alert(
-      `${message} ${"\n"}Computer selected: ${compMsg} ${"\n \n"} Match Tie!!! `
+      `${message} ${"\n"}Computer selected: ${compMsg} ${"\n \n"} Match Tie!!! ${"\n \n"} 
+      ${JSON.stringify(matchScore)}
+      
+      Won: ${matchScore.win}
+      Lose: ${matchScore.lose}
+      Tie: ${matchScore.tie}`
     ); // 1
   } else if (computerVal == 2) {
+    matchScore.win++;
     alert(
-      `${message} ${"\n"}Computer selected: ${compMsg} ${"\n \n"} You Won.. `
+      `${message} ${"\n"}Computer selected: ${compMsg} ${"\n \n"} You Won.. ${"\n \n"} 
+      ${JSON.stringify(matchScore)}
+
+      Won: ${matchScore.win}
+      Lose: ${matchScore.lose}
+      Tie: ${matchScore.tie}`
     );
   } else {
+    matchScore.lose++;
     alert(
-      `${message} ${"\n"}Computer selected: ${compMsg} ${"\n \n"} You Lost.. `
+      `${message} ${"\n"}Computer selected: ${compMsg} ${"\n \n"} You Lost.. ${"\n \n"} 
+      ${JSON.stringify(matchScore)}
+
+      Won: ${matchScore.win}
+      Lose: ${matchScore.lose}
+      Tie: ${matchScore.tie}`
     );
   }
+
+  // console.log(matchScore);
 };
 const ball = (val) => {
   let message = `You selected: ${choice(val)}`;
@@ -38,18 +64,38 @@ const ball = (val) => {
   let compMsg = choice(computerVal);
 
   if (computerVal == val) {
+    matchScore.tie++;
     alert(
-      `${message} ${"\n"}Computer selected: ${compMsg} ${"\n \n"} Match Tie!!! `
+      `${message} ${"\n"}Computer selected: ${compMsg} ${"\n \n"} Match Tie!!!  ${"\n \n"} 
+      ${JSON.stringify(matchScore)}
+
+      Won: ${matchScore.win}
+      Lose: ${matchScore.lose}
+      Tie: ${matchScore.tie}`
     ); // 2
   } else if (computerVal == 1) {
+    matchScore.lose++;
     alert(
-      `${message} ${"\n"}Computer selected: ${compMsg} ${"\n \n"} You Lost.. `
+      `${message} ${"\n"}Computer selected: ${compMsg} ${"\n \n"} You Lost.. ${"\n \n"} 
+      ${JSON.stringify(matchScore)}
+
+      Won: ${matchScore.win}
+      Lose: ${matchScore.lose}
+      Tie: ${matchScore.tie}`
     );
   } else {
+    matchScore.win++;
     alert(
-      `${message} ${"\n"}Computer selected: ${compMsg} ${"\n \n"} You Won.. `
+      `${message} ${"\n"}Computer selected: ${compMsg} ${"\n \n"} You Won.. ${"\n \n"} 
+      ${JSON.stringify(matchScore)}
+
+      Won: ${matchScore.win}
+      Lose: ${matchScore.lose}
+      Tie: ${matchScore.tie}`
     );
   }
+
+  // console.log(matchScore);
 };
 const stump = (val) => {
   let message = `You selected: ${choice(val)}`;
@@ -58,16 +104,36 @@ const stump = (val) => {
   let compMsg = choice(computerVal);
 
   if (computerVal == val) {
+    matchScore.tie++;
     alert(
-      `${message} ${"\n"}Computer selected: ${compMsg} ${"\n \n"} Match Tie!!! `
+      `${message} ${"\n"}Computer selected: ${compMsg} ${"\n \n"} Match Tie!!! ${"\n \n"} 
+      ${JSON.stringify(matchScore)}
+
+      Won: ${matchScore.win}
+      Lose: ${matchScore.lose}
+      Tie: ${matchScore.tie}`
     ); // 3
   } else if (computerVal == 2) {
+    matchScore.lose++;
     alert(
-      `${message} ${"\n"}Computer selected: ${compMsg} ${"\n \n"} You Lost.. `
+      `${message} ${"\n"}Computer selected: ${compMsg} ${"\n \n"} You Lost.. ${"\n \n"} 
+      ${JSON.stringify(matchScore)}
+
+      Won: ${matchScore.win}
+      Lose: ${matchScore.lose}
+      Tie: ${matchScore.tie}`
     );
   } else {
+    matchScore.win++;
     alert(
-      `${message} ${"\n"}Computer selected: ${compMsg} ${"\n \n"} You Won.. `
+      `${message} ${"\n"}Computer selected: ${compMsg} ${"\n \n"} You Won.. ${"\n \n"} 
+      ${JSON.stringify(matchScore)}
+
+      Won: ${matchScore.win}
+      Lose: ${matchScore.lose}
+      Tie: ${matchScore.tie}`
     );
   }
+
+  // console.log(matchScore);
 };
