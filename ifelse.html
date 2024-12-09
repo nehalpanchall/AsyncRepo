@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+
+  <script>
+    let age = 50;
+    let gender = "male";
+    let discount;
+
+    if (age <= 5) {
+      discount = 100;
+    } else if (gender === "female" || age <= 8) {
+      discount = 50;
+    } else if (age > 65) {
+      discount = 30;
+    } else {
+      discount = 0;
+    }
+
+    console.log(`Total discount: ${discount}`);
+  </script>
+</html>
