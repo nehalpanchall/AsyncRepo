@@ -8,9 +8,14 @@ const choice = (val) => {
   }
 };
 
+const randomNumber = () => {
+  let randomNo = Math.ceil(Math.random() * 3);
+  return randomNo;
+};
+
 const bat = (val) => {
   let message = `You selected: ${choice(val)}`;
-  var computerVal = Math.ceil(Math.random() * 3);
+  var computerVal = randomNumber();
   let compMsg = choice(computerVal);
 
   if (computerVal == val) {
@@ -29,7 +34,7 @@ const bat = (val) => {
 };
 const ball = (val) => {
   let message = `You selected: ${choice(val)}`;
-  var computerVal = Math.ceil(Math.random() * 3);
+  var computerVal = randomNumber();
   let compMsg = choice(computerVal);
 
   if (computerVal == val) {
@@ -49,7 +54,7 @@ const ball = (val) => {
 const stump = (val) => {
   let message = `You selected: ${choice(val)}`;
 
-  var computerVal = Math.ceil(Math.random() * 3);
+  var computerVal = randomNumber();
   let compMsg = choice(computerVal);
 
   if (computerVal == val) {
