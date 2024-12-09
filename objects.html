@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Object</title>
+  </head>
+  <body></body>
+  <script>
+    let human = {
+      fname: "nehal",
+      role: "developer",
+      age: 27,
+
+      sayHello() {
+        console.log(`Hello from inside Oject`);
+      },
+    };
+
+    console.log(human);
+    console.log(human.fname);
+    console.log(human.age);
+    console.log(human.role);
+
+    human["ci-ty"] = "Toronto";
+
+    console.log(human);
+
+    delete human["ci-ty"];
+
+    console.log(human);
+
+    // human.sayHello = function () {
+    //   console.log(`hello from ${this.fname}`);
+    // };
+
+    // function sayHi() {
+    //   console.log(`hi`);
+    // }
+
+    // human.sayHello = sayHi;
+
+    human.sayHello();
+  </script>
+</html>
