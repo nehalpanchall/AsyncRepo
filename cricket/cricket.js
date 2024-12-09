@@ -28,6 +28,8 @@ const bat = (val) => {
     matchScore.tie++;
     alert(
       `${message} ${"\n"}Computer selected: ${compMsg} ${"\n \n"} Match Tie!!! ${"\n \n"} 
+      ${JSON.stringify(matchScore)}
+      
       Won: ${matchScore.win}
       Lose: ${matchScore.lose}
       Tie: ${matchScore.tie}`
@@ -36,6 +38,8 @@ const bat = (val) => {
     matchScore.win++;
     alert(
       `${message} ${"\n"}Computer selected: ${compMsg} ${"\n \n"} You Won.. ${"\n \n"} 
+      ${JSON.stringify(matchScore)}
+
       Won: ${matchScore.win}
       Lose: ${matchScore.lose}
       Tie: ${matchScore.tie}`
@@ -44,6 +48,8 @@ const bat = (val) => {
     matchScore.lose++;
     alert(
       `${message} ${"\n"}Computer selected: ${compMsg} ${"\n \n"} You Lost.. ${"\n \n"} 
+      ${JSON.stringify(matchScore)}
+
       Won: ${matchScore.win}
       Lose: ${matchScore.lose}
       Tie: ${matchScore.tie}`
@@ -61,6 +67,8 @@ const ball = (val) => {
     matchScore.tie++;
     alert(
       `${message} ${"\n"}Computer selected: ${compMsg} ${"\n \n"} Match Tie!!!  ${"\n \n"} 
+      ${JSON.stringify(matchScore)}
+
       Won: ${matchScore.win}
       Lose: ${matchScore.lose}
       Tie: ${matchScore.tie}`
@@ -69,6 +77,8 @@ const ball = (val) => {
     matchScore.lose++;
     alert(
       `${message} ${"\n"}Computer selected: ${compMsg} ${"\n \n"} You Lost.. ${"\n \n"} 
+      ${JSON.stringify(matchScore)}
+
       Won: ${matchScore.win}
       Lose: ${matchScore.lose}
       Tie: ${matchScore.tie}`
@@ -77,6 +87,8 @@ const ball = (val) => {
     matchScore.win++;
     alert(
       `${message} ${"\n"}Computer selected: ${compMsg} ${"\n \n"} You Won.. ${"\n \n"} 
+      ${JSON.stringify(matchScore)}
+
       Won: ${matchScore.win}
       Lose: ${matchScore.lose}
       Tie: ${matchScore.tie}`
@@ -95,6 +107,8 @@ const stump = (val) => {
     matchScore.tie++;
     alert(
       `${message} ${"\n"}Computer selected: ${compMsg} ${"\n \n"} Match Tie!!! ${"\n \n"} 
+      ${JSON.stringify(matchScore)}
+
       Won: ${matchScore.win}
       Lose: ${matchScore.lose}
       Tie: ${matchScore.tie}`
@@ -103,6 +117,8 @@ const stump = (val) => {
     matchScore.lose++;
     alert(
       `${message} ${"\n"}Computer selected: ${compMsg} ${"\n \n"} You Lost.. ${"\n \n"} 
+      ${JSON.stringify(matchScore)}
+
       Won: ${matchScore.win}
       Lose: ${matchScore.lose}
       Tie: ${matchScore.tie}`
@@ -111,6 +127,8 @@ const stump = (val) => {
     matchScore.win++;
     alert(
       `${message} ${"\n"}Computer selected: ${compMsg} ${"\n \n"} You Won.. ${"\n \n"} 
+      ${JSON.stringify(matchScore)}
+
       Won: ${matchScore.win}
       Lose: ${matchScore.lose}
       Tie: ${matchScore.tie}`
