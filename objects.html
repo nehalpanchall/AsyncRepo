@@ -8,38 +8,37 @@
   <body></body>
   <script>
     let human = {
-      fname: "nehal",
+      fname: "Nehal",
       role: "developer",
       age: 27,
+      // city: undefined,
 
-      sayHello() {
-        console.log(`Hello from inside Oject`);
+      sayHello: function () {
+        console.table("Hello");
       },
     };
 
+    let city = {
+      cityName: "Toronto",
+    };
+
+    console.table(human);
+
+    console.log(Object.keys(human));
+    console.log(Object.values(human));
+    console.log(Object.entries(human));
+    console.log(human.hasOwnProperty(`sayHello`));
+    Object.assign(human, city);
     console.log(human);
-    console.log(human.fname);
-    console.log(human.age);
-    console.log(human.role);
 
-    human["ci-ty"] = "Toronto";
-
+    Object.seal(human);
+    human.fname = "Pintu";
+    delete human.fname;
     console.log(human);
 
-    delete human["ci-ty"];
-
+    Object.freeze(human);
+    human.fname = "Cruz";
+    delete human.cityName;
     console.log(human);
-
-    // human.sayHello = function () {
-    //   console.log(`hello from ${this.fname}`);
-    // };
-
-    // function sayHi() {
-    //   console.log(`hi`);
-    // }
-
-    // human.sayHello = sayHi;
-
-    human.sayHello();
   </script>
 </html>
