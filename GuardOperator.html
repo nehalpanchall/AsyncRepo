@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guard Operator</title>
+  </head>
+  <body>
+    <h1>If alternatives</h1>
+
+    <h2>
+      Syntax:
+      <span style="text-decoration: underline">Value || defaultValue</span>
+    </h2>
+
+    <p>
+      In Indian Adhar Card, Some old people does not remember their Date of
+      Birth so they consider by default 1st of January.
+    </p>
+
+    <p>
+      Falsy values for Guard operator are :
+      <b>False, 0, null, undefined, Nan, ' ' (Empty String) </b>
+    </p>
+  </body>
+
+  <script>
+    let age; // age = undefined;
+    let finalAge = age || 18;
+
+    console.log(finalAge); // 52 because age is defined
+  </script>
+</html>
