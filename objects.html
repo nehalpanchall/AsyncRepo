@@ -53,6 +53,16 @@
     let product = {
       productName: "xBox",
       "delivery-time": "12:30pm",
+      message: "Good Job",
+      status: "Completed",
+
+      isIdenticalProduct() {
+        if (product == newProduct) {
+          return "Both are same reference";
+        } else {
+          return "not same reference";
+        }
+      },
     };
 
     // Copy
@@ -71,5 +81,16 @@
     console.log(product.productName); // SteamDeck
 
     console.log(product);
+
+    let { message, status } = product;
+
+    console.log(`${message} : ${status}`);
+
+    console.log(product.isIdenticalProduct());
+
+    // Re-naming bracket notation property using object destructing
+    let { ["delivery-time"]: deliveryTime } = product;
+
+    console.log(`Delivery Time: ${deliveryTime}`);
   </script>
 </html>
