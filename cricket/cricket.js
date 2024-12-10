@@ -2,6 +2,10 @@ const matchScore = {
   tie: 0,
   win: 0,
   lose: 0,
+
+  displayScore() {
+    return `Tie: ${this.tie} | Win: ${this.win} | Lose: ${this.lose}`;
+  },
 };
 
 const choice = (val) => {
@@ -30,9 +34,7 @@ const bat = (val) => {
       `${message} ${"\n"}Computer selected: ${compMsg} ${"\n \n"} Match Tie!!! ${"\n \n"} 
       ${JSON.stringify(matchScore)}
       
-      Won: ${matchScore.win}
-      Lose: ${matchScore.lose}
-      Tie: ${matchScore.tie}`
+      ${matchScore.displayScore()}`
     ); // 1
   } else if (computerVal == 2) {
     matchScore.win++;
@@ -40,9 +42,7 @@ const bat = (val) => {
       `${message} ${"\n"}Computer selected: ${compMsg} ${"\n \n"} You Won.. ${"\n \n"} 
       ${JSON.stringify(matchScore)}
 
-      Won: ${matchScore.win}
-      Lose: ${matchScore.lose}
-      Tie: ${matchScore.tie}`
+      ${matchScore.displayScore()}`
     );
   } else {
     matchScore.lose++;
@@ -50,9 +50,7 @@ const bat = (val) => {
       `${message} ${"\n"}Computer selected: ${compMsg} ${"\n \n"} You Lost.. ${"\n \n"} 
       ${JSON.stringify(matchScore)}
 
-      Won: ${matchScore.win}
-      Lose: ${matchScore.lose}
-      Tie: ${matchScore.tie}`
+      ${matchScore.displayScore()}`
     );
   }
 
@@ -69,9 +67,7 @@ const ball = (val) => {
       `${message} ${"\n"}Computer selected: ${compMsg} ${"\n \n"} Match Tie!!!  ${"\n \n"} 
       ${JSON.stringify(matchScore)}
 
-      Won: ${matchScore.win}
-      Lose: ${matchScore.lose}
-      Tie: ${matchScore.tie}`
+      ${matchScore.displayScore()}`
     ); // 2
   } else if (computerVal == 1) {
     matchScore.lose++;
@@ -79,9 +75,7 @@ const ball = (val) => {
       `${message} ${"\n"}Computer selected: ${compMsg} ${"\n \n"} You Lost.. ${"\n \n"} 
       ${JSON.stringify(matchScore)}
 
-      Won: ${matchScore.win}
-      Lose: ${matchScore.lose}
-      Tie: ${matchScore.tie}`
+      ${matchScore.displayScore()}`
     );
   } else {
     matchScore.win++;
@@ -89,9 +83,7 @@ const ball = (val) => {
       `${message} ${"\n"}Computer selected: ${compMsg} ${"\n \n"} You Won.. ${"\n \n"} 
       ${JSON.stringify(matchScore)}
 
-      Won: ${matchScore.win}
-      Lose: ${matchScore.lose}
-      Tie: ${matchScore.tie}`
+      ${matchScore.displayScore()}`
     );
   }
 
@@ -109,9 +101,7 @@ const stump = (val) => {
       `${message} ${"\n"}Computer selected: ${compMsg} ${"\n \n"} Match Tie!!! ${"\n \n"} 
       ${JSON.stringify(matchScore)}
 
-      Won: ${matchScore.win}
-      Lose: ${matchScore.lose}
-      Tie: ${matchScore.tie}`
+      ${matchScore.displayScore()}`
     ); // 3
   } else if (computerVal == 2) {
     matchScore.lose++;
@@ -119,9 +109,7 @@ const stump = (val) => {
       `${message} ${"\n"}Computer selected: ${compMsg} ${"\n \n"} You Lost.. ${"\n \n"} 
       ${JSON.stringify(matchScore)}
 
-      Won: ${matchScore.win}
-      Lose: ${matchScore.lose}
-      Tie: ${matchScore.tie}`
+      ${matchScore.displayScore()}`
     );
   } else {
     matchScore.win++;
@@ -129,9 +117,7 @@ const stump = (val) => {
       `${message} ${"\n"}Computer selected: ${compMsg} ${"\n \n"} You Won.. ${"\n \n"} 
       ${JSON.stringify(matchScore)}
 
-      Won: ${matchScore.win}
-      Lose: ${matchScore.lose}
-      Tie: ${matchScore.tie}`
+      ${matchScore.displayScore()}`
     );
   }
 
