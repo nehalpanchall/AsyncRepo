@@ -7,47 +7,47 @@
   </head>
   <body></body>
   <script>
-    let human = {
-      fname: "Nehal",
-      role: "developer",
-      age: 27,
-      // city: undefined,
+    // let human = {
+    //   fname: "Nehal",
+    //   role: "developer",
+    //   age: 27,
+    //   // city: undefined,
 
-      sayHello: function () {
-        console.table("Hello");
-      },
-    };
+    //   sayHello: function () {
+    //     console.table("Hello");
+    //   },
+    // };
 
-    let city = {
-      cityName: "Toronto",
-    };
+    // let city = {
+    //   cityName: "Toronto",
+    // };
 
-    console.table(human);
+    // console.table(human);
 
-    console.log(Object.keys(human));
-    console.log(Object.values(human));
-    console.log(Object.entries(human));
-    console.log(human.hasOwnProperty(`sayHello`));
-    Object.assign(human, city);
-    console.log(human);
+    // console.log(Object.keys(human));
+    // console.log(Object.values(human));
+    // console.log(Object.entries(human));
+    // console.log(human.hasOwnProperty(`sayHello`));
+    // Object.assign(human, city);
+    // console.log(human);
 
-    Object.seal(human);
-    human.fname = "Pintu";
-    delete human.fname;
-    console.log(human);
+    // Object.seal(human);
+    // human.fname = "Pintu";
+    // delete human.fname;
+    // console.log(human);
 
-    Object.freeze(human);
-    human.fname = "Cruz";
-    delete human.cityName;
-    console.log(human);
+    // Object.freeze(human);
+    // human.fname = "Cruz";
+    // delete human.cityName;
+    // console.log(human);
 
-    // Autoboxing: Automatic conversion of primitives to an object
-    console.log("This is JavaScript".toUpperCase());
+    // // Autoboxing: Automatic conversion of primitives to an object
+    // console.log("This is JavaScript".toUpperCase());
 
-    console.log("Heyllo".length);
+    // console.log("Heyllo".length);
 
-    console.log((6).toFixed(2));
+    // console.log((6).toFixed(2));
 
-    console.log(typeof true.toString());
+    // console.log(typeof true.toString());
   </script>
 </html>
