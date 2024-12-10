@@ -9,5 +9,46 @@
     <h1 style="color: green">Object Constructor Function</h1>
   </body>
 
-  <script></script>
+  <script>
+    // let student1 = {
+    //   stuName: "Nehal",
+    //   rollNo: 600,
+    // };
+
+    // let student2 = {
+    //   stuName: "Pintu",
+    //   rollNo: 303,
+    // };
+
+    function Student(stu_name, stu_rollno) {
+      this.stuName = stu_name;
+      this.rollNo = stu_rollno;
+    }
+
+    let student1 = new Student("Nehal", 600);
+
+    let student2 = new Student("Pintu", 303);
+
+    console.log(student1);
+
+    console.log(student2);
+
+    student1.stuName = "Ninja";
+
+    console.log(student1);
+
+    delete student2.rollNo;
+
+    console.log(student2);
+
+    student1.city = "Toronto";
+
+    console.log(student1);
+
+    student1.sayHello = function () {
+      console.log(`Hello from ${this.stuName}`);
+    };
+
+    student1.sayHello();
+  </script>
 </html>
