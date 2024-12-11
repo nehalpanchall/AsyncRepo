@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inheritance</title>
+  </head>
+  <body>
+    <h1 style="color: green">Inheritance using Object Constructor Function</h1>
+  </body>
+
+  <script>
+    function Creature(ls) {
+      this.lifeSpan = ls;
+    }
+
+    function Person(fName) {
+      this.firstName = fName;
+    }
+
+    Creature.prototype.breath = function () {
+      console.log("Breathing ...");
+    };
+
+    Person.prototype.getName = function () {
+      console.log(`${this.firstName}`);
+    };
+
+    let creature1 = new Creature(60);
+
+    let person1 = new Person("Nehal");
+    let person2 = new Person("Ninja");
+
+    console.log(creature1);
+    console.log(person1);
+
+    Person.prototype.__proto__ = Creature.prototype;
+
+    console.log(person1.breath());
+  </script>
+</html>
