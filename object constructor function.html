@@ -23,32 +23,26 @@
     function Student(stu_name, stu_rollno) {
       this.stuName = stu_name;
       this.rollNo = stu_rollno;
+
+      this.sayHello = function () {
+        console.log(`Hello from ${this.stuName}`);
+      };
     }
 
-    let student1 = new Student("Nehal", 600);
+    // Create
+    let stu1 = new Student("Nehal", 600);
+    console.log(stu1);
 
-    let student2 = new Student("Pintu", 303);
+    // Update
+    stu1.stuName = "Pintu";
+    console.log(stu1);
 
-    console.log(student1);
+    // Delete property
+    delete stu1.rollNo;
+    console.log(stu1);
 
-    console.log(student2);
-
-    student1.stuName = "Ninja";
-
-    console.log(student1);
-
-    delete student2.rollNo;
-
-    console.log(student2);
-
-    student1.city = "Toronto";
-
-    console.log(student1);
-
-    student1.sayHello = function () {
-      console.log(`Hello from ${this.stuName}`);
-    };
-
-    student1.sayHello();
+    // Delete method
+    delete stu1.sayHello;
+    console.log(stu1);
   </script>
 </html>
