@@ -12,36 +12,36 @@
   </body>
 
   <script>
-    class person {
-      // 1. Constructor Function
-      constructor(fname, id) {
-        // console.log("Automatical call while instance of person is created... ");
-        this.firstName = fname;
-        this.personId = id;
-      }
+    // class person {
+    //   // 1. Constructor Function
+    //   constructor(fname, id) {
+    //     // console.log("Automatical call while instance of person is created... ");
+    //     this.firstName = fname;
+    //     this.personId = id;
+    //   }
 
-      // 2. Prototype Method (Directly add to person prototype)
-      sayHello() {
-        return `Name is: ${this.firstName}`;
-      }
+    //   // 2. Prototype Method (Directly add to person prototype)
+    //   sayHello() {
+    //     return `Name is: ${this.firstName}`;
+    //   }
 
-      // 3. Static Method (Only access through class only, not object (Instance))
-      static sayHi() {
-        console.log("Hi..");
-      }
+    //   // 3. Static Method (Only access through class only, not object (Instance))
+    //   static sayHi() {
+    //     console.log("Hi..");
+    //   }
 
-      // 4. Static property
-      static sProperty = "static property...";
-    }
+    //   // 4. Static property
+    //   static sProperty = "static property...";
+    // }
 
-    let person1 = new person("Nehal", 600);
+    // let person1 = new person("Nehal", 600);
 
-    console.log(person1.sayHello());
+    // console.log(person1.sayHello());
 
-    // console.log(person1.sayHi()); // Error: static method does not exist in prototype chain
+    // // console.log(person1.sayHi()); // Error: static method does not exist in prototype chain
 
-    // console.log(person1.sProperty); // Undefined: Object does not have this property
+    // // console.log(person1.sProperty); // Undefined: Object does not have this property
 
-    console.log(person.sayHi());
+    // console.log(person.sayHi());
   </script>
 </html>
