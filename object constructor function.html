@@ -24,9 +24,9 @@
       this.stuName = stu_name;
       this.rollNo = stu_rollno;
 
-      this.sayHello = function () {
-        console.log(`Hello from ${this.stuName}`);
-      };
+      //   this.sayHello = function () {
+      //     console.log(`Hello from ${this.stuName}`);
+      //   };
     }
 
     // Create
@@ -41,8 +41,11 @@
     delete stu1.rollNo;
     console.log(stu1);
 
-    // Delete method
-    delete stu1.sayHello;
-    console.log(stu1);
+    // add in Student Prototype
+    Student.prototype.sayHello = function () {
+      console.log(`Hello from ${this.stuName}`);
+    };
+
+    stu1.sayHello();
   </script>
 </html>
