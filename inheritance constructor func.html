@@ -23,7 +23,7 @@
     };
 
     Person.prototype.getName = function () {
-      console.log(`${this.firstName}`);
+      console.log(`Hello`);
     };
 
     let creature1 = new Creature(60);
@@ -31,11 +31,16 @@
     let person1 = new Person("Nehal");
     let person2 = new Person("Ninja");
 
-    console.log(creature1);
-    console.log(person1);
+    Creature.prototype.__proto__ = Person.prototype;
 
-    Person.prototype.__proto__ = Creature.prototype;
+    console.log(creature1.getName());
 
-    console.log(person1.breath());
+    // console.log(creature1);
+    // console.log(person1);
+
+    // Creature.prototype.__proto__ = Person.prototype;
+
+    // console.log(person1.breath());
+    // console.log(creature1.getName());
   </script>
 </html>
