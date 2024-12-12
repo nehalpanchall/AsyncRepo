@@ -43,5 +43,36 @@
     // // console.log(person1.sProperty); // Undefined: Object does not have this property
 
     // console.log(person.sayHi());
+
+    class creature {
+      constructor(ls) {
+        this.lifeSpan = ls;
+      }
+
+      breath() {
+        console.log("breathing...");
+      }
+    }
+
+    class person extends creature {
+      constructor(x, fname) {
+        super(x);
+        this.firstName = fname;
+      }
+
+      sayHello() {
+        console.log("Hello");
+      }
+
+      getMessage() {
+        console.log(
+          `Name is ${this.firstName} and will have ${this.lifeSpan} CAD...`
+        );
+      }
+    }
+
+    let person1 = new person(60, "Nehal");
+
+    console.log(person1.getMessage());
   </script>
 </html>
