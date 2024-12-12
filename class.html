@@ -52,6 +52,10 @@
       breath() {
         console.log("breathing...");
       }
+
+      getLifeSpan() {
+        console.log(`Life span is ${this.lifeSpan}`);
+      }
     }
 
     class person extends creature {
@@ -65,6 +69,7 @@
       }
 
       getMessage() {
+        super.getLifeSpan();
         console.log(
           `Name is ${this.firstName} and will have ${this.lifeSpan} CAD...`
         );
