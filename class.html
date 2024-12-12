@@ -56,6 +56,10 @@
       getLifeSpan() {
         console.log(`Life span is ${this.lifeSpan}`);
       }
+
+      sayHello(x) {
+        console.log(`Hello from ${x}`);
+      }
     }
 
     class person extends creature {
@@ -64,12 +68,14 @@
         this.firstName = fname;
       }
 
-      sayHello() {
-        console.log("Hello");
+      sayHello(x) {
+        console.log(`Hello from ${x}`);
       }
 
       getMessage() {
-        super.getLifeSpan();
+        super.sayHello("Super Class");
+        this.sayHello("Sub Class");
+
         console.log(
           `Name is ${this.firstName} and will have ${this.lifeSpan} CAD...`
         );
