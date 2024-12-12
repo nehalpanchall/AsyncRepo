@@ -47,6 +47,8 @@
     class creature {
       constructor(ls) {
         this.lifeSpan = ls;
+
+        console.log("hello from creature constructor...");
       }
 
       breath() {
@@ -63,9 +65,11 @@
     }
 
     class person extends creature {
-      constructor(x, fname) {
-        super(x);
+      constructor(lspan, fname) {
+        super(lspan);
         this.firstName = fname;
+
+        console.log("hello from person constructor..");
       }
 
       sayHello(x) {
@@ -82,8 +86,16 @@
       }
     }
 
-    let person1 = new person(60, "Nehal");
+    class third extends person {
+      constructor(ls, fn, num) {
+        super(ls, fn);
+        this.number = num;
+        console.log("hello from third constructor...");
+      }
+    }
 
-    console.log(person1.getMessage());
+    let third1 = new third(60, "Nehal", 303);
+
+    console.log(third1);
   </script>
 </html>
