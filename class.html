@@ -123,26 +123,52 @@
 
     // ========================================
 
-    let methodBox = {
-      sayHello() {
-        console.log("Hello..");
-      },
+    // let methodBox = {
+    //   sayHello() {
+    //     console.log("Hello..");
+    //   },
 
-      sayBye() {
-        console.log("Bye..");
-      },
-    };
+    //   sayBye() {
+    //     console.log("Bye..");
+    //   },
+    // };
+
+    // class person {
+    //   constructor(fName, id) {
+    //     console.log("This is constructor function call..");
+    //   }
+    // }
+
+    // Object.assign(person.prototype, methodBox);
+
+    // let person1 = new person("Nehal", 600);
+
+    // person1.sayHello();
+
+    // ========================================
 
     class person {
-      constructor(fName, id) {
-        console.log("This is constructor function call..");
+      constructor(name) {
+        this.fName = name;
+      }
+
+      get getName() {
+        return `${this.fName}`;
+      }
+
+      set setName(newName) {
+        this.fName = newName.toUpperCase();
       }
     }
 
-    Object.assign(person.prototype, methodBox);
+    let person1 = new person("Nehal");
 
-    let person1 = new person("Nehal", 600);
+    // person1.setName("Pintu");
 
-    person1.sayHello();
+    person1.setName = "Pintu";
+
+    let temp = person1.getName;
+    console.log(person1);
+    console.log(temp);
   </script>
 </html>
