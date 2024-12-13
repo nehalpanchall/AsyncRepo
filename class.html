@@ -44,58 +44,105 @@
 
     // console.log(person.sayHi());
 
-    class creature {
-      constructor(ls) {
-        this.lifeSpan = ls;
+    // ========================================
 
-        console.log("hello from creature constructor...");
-      }
+    // class creature {
+    //   constructor(ls) {
+    //     console.log("hello from creature constructor...");
+    //     this.lifeSpan = ls;
+    //   }
 
-      breath() {
-        console.log("breathing...");
-      }
+    //   breath() {
+    //     console.log("breathing...");
+    //   }
 
-      getLifeSpan() {
-        console.log(`Life span is ${this.lifeSpan}`);
-      }
+    //   getLifeSpan() {
+    //     console.log(`Life span is ${this.lifeSpan}`);
+    //   }
 
-      sayHello(x) {
-        console.log(`Hello from ${x}`);
+    //   sayHello(x) {
+    //     console.log(`Hello from ${x}`);
+    //   }
+    // }
+
+    // class person extends creature {
+    //   constructor(lspan, fname) {
+    //     console.log("hello from person constructor..");
+    //     super(lspan);
+    //     this.firstName = fname;
+    //   }
+
+    //   sayHello(x) {
+    //     console.log(`Hello from ${x}`);
+    //   }
+
+    //   getMessage() {
+    //     super.sayHello("Super Class");
+    //     this.sayHello("Sub Class");
+
+    //     console.log(
+    //       `Name is ${this.firstName} and will have ${this.lifeSpan} CAD...`
+    //     );
+    //   }
+    // }
+
+    // class third extends person {
+    //   constructor(ls, fn, num) {
+    //     console.log("hello from third constructor...");
+    //     super(ls, fn);
+    //     this.number = num;
+    //   }
+    // }
+
+    // let third1 = new third(60, "Nehal", 303);
+
+    // console.log(third1);
+
+    // ========================================
+
+    // class person {
+    //   #firstName;
+    //   constructor(name) {
+    //     console.log("constructor function...");
+    //     this.#firstName = name;
+    //   }
+
+    //   #sayHello() {
+    //     console.log("Hello");
+    //   }
+
+    //   getName() {
+    //     console.log(`${this.#firstName}`);
+    //     this.#sayHello();
+    //   }
+    // }
+
+    // let person1 = new person("Nehal");
+
+    // person1.getName();
+
+    // ========================================
+
+    let methodBox = {
+      sayHello() {
+        console.log("Hello..");
+      },
+
+      sayBye() {
+        console.log("Bye..");
+      },
+    };
+
+    class person {
+      constructor(fName, id) {
+        console.log("This is constructor function call..");
       }
     }
 
-    class person extends creature {
-      constructor(lspan, fname) {
-        super(lspan);
-        this.firstName = fname;
+    Object.assign(person.prototype, methodBox);
 
-        console.log("hello from person constructor..");
-      }
+    let person1 = new person("Nehal", 600);
 
-      sayHello(x) {
-        console.log(`Hello from ${x}`);
-      }
-
-      getMessage() {
-        super.sayHello("Super Class");
-        this.sayHello("Sub Class");
-
-        console.log(
-          `Name is ${this.firstName} and will have ${this.lifeSpan} CAD...`
-        );
-      }
-    }
-
-    class third extends person {
-      constructor(ls, fn, num) {
-        super(ls, fn);
-        this.number = num;
-        console.log("hello from third constructor...");
-      }
-    }
-
-    let third1 = new third(60, "Nehal", 303);
-
-    console.log(third1);
+    person1.sayHello();
   </script>
 </html>
