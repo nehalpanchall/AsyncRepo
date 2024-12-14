@@ -9,5 +9,58 @@
     <h1 style="color: green">Array (An iterable object)</h1>
   </body>
 
-  <script></script>
+  <script>
+    // [0, 1, 2, 3, 4]
+    let arr = [1, 2, 3, 4, 5];
+
+    console.log(arr); // (5): [1,2,3,4,5]
+    console.log(typeof arr); // object
+    console.log(arr[2]); // 3
+    console.log(arr[10]); // undefined
+    console.log(arr[-2]); // undefined
+
+    // Array Methods
+
+    console.log(Array.isArray(arr)); // True
+    console.log(arr.length); // 5
+
+    arr.push("Nehal"); // add as last element
+    console.log(arr); // (6): [1,2,3,4,5, "Nehal"]
+
+    arr.pop(); // remove last element
+    console.log(arr); // (5): [1,2,3,4,5]
+
+    arr.unshift("Pintu"); // add as first element
+    console.log(arr); // (6): ["Pintu",1,2,3,4,5]
+
+    arr.shift(); // remove first element
+    console.log(arr); // (5): [1,2,3,4,5]
+
+    let newArr = arr.slice(-4, -2); // cut the slice (start index, no of element based on length)
+    console.log(`this is a slice: ${newArr}`); // [2,3]
+
+    // arr.splice(index number, delete_count, item1, item2, ...);
+    // Modifies original array and return
+
+    // let arr = [1, 2, 3, 4, 5];
+
+    // Add
+    arr.splice(2, 0, "Nehal");
+    console.log(arr); // (6) [1, 2, 'Nehal', 3, 4, 5]
+
+    // Replace (Remove + Add)
+    arr.splice(3, 1, "Panchal");
+    console.log(arr); // 6) [1, 2, 'Nehal', 'Panchal', 4, 5]
+
+    // Delete
+    arr.splice(4, 2);
+    console.log(arr); // (4) [1, 2, 'Nehal', 'Panchal']
+
+    let newArray = [4, 3, 5, 6];
+    newArray.sort();
+    console.log(newArray);
+
+    // Copy exisiting array
+    console.log(newArray.valueOf());
+  </script>
 </html>
