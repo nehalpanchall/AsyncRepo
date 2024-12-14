@@ -92,5 +92,19 @@
 
     let [number, string, boolean] = myArray;
     console.log(boolean);
+
+    // ==========================
+
+    // Array Accumulator pattern (Sum of array)
+
+    let num = [1, 2, 3, 4];
+    let sum = 0;
+
+    for (let i = 0; i < num.length; i++) {
+      sum = sum + num[i];
+      console.log(sum);
+    }
+
+    console.log(`sum is ${sum}`);
   </script>
 </html>
