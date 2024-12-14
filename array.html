@@ -62,5 +62,26 @@
 
     // Copy exisiting array
     console.log(newArray.valueOf());
+
+    // ===========================
+
+    // Array Reference (Same as object reference)
+
+    let array = [12, 3, 4];
+    let array2 = array;
+
+    array2[0] = 1;
+
+    console.log(array);
+    console.log(array2);
+
+    let a = [1, 2];
+    let b = [1, 2];
+
+    if (a == b) {
+      console.log("Both are same array");
+    } else {
+      console.log("Both are not same array");
+    }
   </script>
 </html>
