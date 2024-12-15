@@ -36,6 +36,39 @@
     let copyArr = arr.slice(2, 5);
     console.log(copyArr);
 
+    // Print 1 to 10 number in reverse order
+    for (let i = 0; i < 10; i++) {
+      console.log(10 - i);
+    }
+
+    let givenArr = [1, -6, 5, 7, -98];
+
+    // returns positive numbers using continue
+    for (let i = 0; i < givenArr.length; i++) {
+      if (givenArr[i] > 0) {
+        console.log(`Given array ${givenArr[i]}`);
+      }
+      continue;
+    }
+
+    // returns positive numbers using continue
+    for (let i = 0; i < givenArr.length; i++) {
+      if (givenArr[i] < 0) {
+        continue;
+      }
+      console.log(`Given array ${givenArr[i]}`);
+    }
+
+    // Concatenate given string using accumulator pattern
+
+    let strArr = ["JavaScript", "is", "the", "best"];
+    let str = "";
+    for (let i = 0; i < strArr.length; i++) {
+      str = str + " " + strArr[i];
+    }
+
+    console.log(`Merge string is: ${str}`);
+
     // =============================
 
     for (i = 0; i <= arr.length; i++) {
