@@ -39,11 +39,17 @@
 
     let prime = [];
 
-    while (count <= 5) {
-      if (isPrime(check)) {
+    while (count) {
+      if (count > 5) {
+        break;
+      } else if (isPrime(check)) {
         prime.push(check);
         // console.log(`${check}`); // 2, 3, 5, 7, 11
         count++;
+
+        // if (count > 5) {
+        //   break;
+        // }
       }
       check++;
     }
