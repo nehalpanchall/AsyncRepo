@@ -14,6 +14,30 @@
 
     let arr = [3, 2, 3, 4, 5, 65, 7, 8];
 
+    // 0: 3
+    // 1: 2
+    // 2: 3
+    // 3: 4
+    // 4: 5
+    // 5: 65
+    // 6: 7
+    // 7: 8
+
+    function box(array, pos) {
+      for (i = 0; i <= array.length; i++) {
+        if (i == pos) {
+          return `${array[i]} is an element at position ${pos}`;
+        }
+      }
+    }
+
+    console.log(box(arr, 1));
+
+    let copyArr = arr.slice(2, 5);
+    console.log(copyArr);
+
+    // =============================
+
     for (i = 0; i <= arr.length; i++) {
       if (arr[i] == 5) {
         console.log(`Index of 5 is: ${i}`);

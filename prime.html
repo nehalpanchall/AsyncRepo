@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prime Number</title>
+  </head>
+  <body>
+    <h1 style="color: green">Prime number using while loop</h1>
+
+    <ul>
+      <li>2: Event prime number</li>
+      <li>3: Prime</li>
+      <li>4: Not Prime</li>
+      <li>5: Prime</li>
+      <li>6: Not prime</li>
+      <li>7: Prime</li>
+      <li>8: Not Prime</li>
+      <li>9: Not Prime</li>
+      <li>10: Not Prime</li>
+    </ul>
+
+    <p></p>
+  </body>
+  <script>
+    function isPrime(number) {
+      for (i = 2; i < number; i++) {
+        if (number % i == 0) {
+          // Number is even and not prime
+          return false;
+        }
+      }
+      // Number is prime
+      return true;
+    }
+
+    let check = 2; // 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12
+    let count = 1; // 2 | 3 | 3 | 4 | 4 | 5 | 5 | 5 | 5 | 6
+
+    let prime = [];
+
+    while (count <= 5) {
+      if (isPrime(check)) {
+        prime.push(check);
+        // console.log(`${check}`); // 2, 3, 5, 7, 11
+        count++;
+      }
+      check++;
+    }
+
+    console.log(`Prime Array is: ${prime}`);
+  </script>
+</html>
