@@ -4,7 +4,7 @@ let todo_add = document.querySelector("#todo-add");
 
 todo_add.addEventListener("click", addTodo);
 
-let todoList = [{ todoName: "Ninja", todoDate: "2024-12-16" }];
+let todoList = [{ todoName: "", todoDate: "" }];
 
 displayTodos();
 
@@ -24,10 +24,13 @@ function displayTodos() {
   displayMain.innerText = "";
 
   for (let i = 0; i < todoList.length; i++) {
-    let div = document.createElement("div");
-    div.innerHTML += ` \n ${todoList[i].todoName}     ${todoList[i].todoDate} 
-    <button onclick="deleteTodo('${i}')">Delete</button>`;
-    displayMain.appendChild(div);
+    if (todoList[i].todoName && todoList[i].todoDate != "") {
+      displayMain.innerHTML += `<div>
+                <span>${todoList[i].todoName}</span>
+                <span>${todoList[i].todoDate}</span>
+                <button onclick="deleteTodo('${i}')">Delete</button>
+            </div>`;
+    }
   }
 }
 
