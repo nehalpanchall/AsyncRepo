@@ -30,16 +30,14 @@ function displayTodos() {
     // Object destructuring
     let { todoName, todoDate } = todoList[i];
 
-    displayMain.innerHTML += `<div>
-                <span>${todoName}</span>
-                <span>${todoDate}</span>
-                ${
-                  i != 0
-                    ? `<button onclick="deleteTodo('${i}')">Delete</button>`
-                    : ""
-                }
-                
-            </div>`;
+    if (i != 0) {
+      displayMain.innerHTML += `
+                    <span>${todoName}</span>
+                    <span>${todoDate}</span>
+                    <button onclick="deleteTodo('${i}')">Delete</button>
+                    
+                `;
+    }
   }
 }
 
