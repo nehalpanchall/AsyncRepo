@@ -24,13 +24,16 @@ function displayTodos() {
   displayMain.innerText = "";
 
   for (let i = 0; i < todoList.length; i++) {
-    if (todoList[i].todoName && todoList[i].todoDate != "") {
-      displayMain.innerHTML += `<div>
+    displayMain.innerHTML += `<div>
                 <span>${todoList[i].todoName}</span>
                 <span>${todoList[i].todoDate}</span>
-                <button onclick="deleteTodo('${i}')">Delete</button>
+                ${
+                  i != 0
+                    ? `<button onclick="deleteTodo('${i}')">Delete</button>`
+                    : ""
+                }
+                
             </div>`;
-    }
   }
 }
 
