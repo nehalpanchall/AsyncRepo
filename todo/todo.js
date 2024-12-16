@@ -24,9 +24,15 @@ function displayTodos() {
   displayMain.innerText = "";
 
   for (let i = 0; i < todoList.length; i++) {
+    // let name = todoList[i].todoName;
+    // let date = todoList[i].todoDate;
+
+    // Object destructuring
+    let { todoName, todoDate } = todoList[i];
+
     displayMain.innerHTML += `<div>
-                <span>${todoList[i].todoName}</span>
-                <span>${todoList[i].todoDate}</span>
+                <span>${todoName}</span>
+                <span>${todoDate}</span>
                 ${
                   i != 0
                     ? `<button onclick="deleteTodo('${i}')">Delete</button>`
