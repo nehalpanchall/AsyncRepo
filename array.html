@@ -10,115 +10,132 @@
   </body>
 
   <script>
-    // [0, 1, 2, 3, 4]
-    let arr = [1, 2, 3, 4, 5];
-
-    console.log(arr); // (5): [1,2,3,4,5]
-    console.log(typeof arr); // object
-    console.log(arr[2]); // 3
-    console.log(arr[10]); // undefined
-    console.log(arr[-2]); // undefined
-
-    // Array Methods
-
-    console.log(Array.isArray(arr)); // True
-    console.log(arr.length); // 5
-
-    arr.push("Nehal"); // add as last element
-    console.log(arr); // (6): [1,2,3,4,5, "Nehal"]
-
-    arr.pop(); // remove last element
-    console.log(arr); // (5): [1,2,3,4,5]
-
-    arr.unshift("Pintu"); // add as first element
-    console.log(arr); // (6): ["Pintu",1,2,3,4,5]
-
-    arr.shift(); // remove first element
-    console.log(arr); // (5): [1,2,3,4,5]
-
-    let newArr = arr.slice(-4, -2); // cut the slice (start index, no of element based on length)
-    console.log(`this is a slice: ${newArr}`); // [2,3]
-
-    // arr.splice(index number, delete_count, item1, item2, ...);
-    // Modifies original array and return
-
+    // // [0, 1, 2, 3, 4]
     // let arr = [1, 2, 3, 4, 5];
 
-    // Add
-    arr.splice(2, 0, "Nehal");
-    console.log(arr); // (6) [1, 2, 'Nehal', 3, 4, 5]
+    // console.log(arr); // (5): [1,2,3,4,5]
+    // console.log(typeof arr); // object
+    // console.log(arr[2]); // 3
+    // console.log(arr[10]); // undefined
+    // console.log(arr[-2]); // undefined
 
-    // Replace (Remove + Add)
-    arr.splice(3, 1, "Panchal");
-    console.log(arr); // 6) [1, 2, 'Nehal', 'Panchal', 4, 5]
+    // // Array Methods
 
-    // Delete
-    arr.splice(4, 2);
-    console.log(arr); // (4) [1, 2, 'Nehal', 'Panchal']
+    // console.log(Array.isArray(arr)); // True
+    // console.log(arr.length); // 5
 
-    let newArray = [4, 3, 5, 6];
-    newArray.sort();
-    console.log(newArray);
+    // arr.push("Nehal"); // add as last element
+    // console.log(arr); // (6): [1,2,3,4,5, "Nehal"]
 
-    // Copy exisiting array
-    console.log(newArray.valueOf());
+    // arr.pop(); // remove last element
+    // console.log(arr); // (5): [1,2,3,4,5]
 
-    // ===========================
+    // arr.unshift("Pintu"); // add as first element
+    // console.log(arr); // (6): ["Pintu",1,2,3,4,5]
 
-    // Array Reference (Same as object reference)
+    // arr.shift(); // remove first element
+    // console.log(arr); // (5): [1,2,3,4,5]
 
-    let array = [12, 3, 4];
-    let array2 = array;
+    // let newArr = arr.slice(-4, -2); // cut the slice (start index, no of element based on length)
+    // console.log(`this is a slice: ${newArr}`); // [2,3]
 
-    array2[0] = 1;
+    // // arr.splice(index number, delete_count, item1, item2, ...);
+    // // Modifies original array and return
 
-    console.log(array);
-    console.log(array2);
+    // // let arr = [1, 2, 3, 4, 5];
 
-    let a = [1, 2];
-    let b = [1, 2];
+    // // Add
+    // arr.splice(2, 0, "Nehal");
+    // console.log(arr); // (6) [1, 2, 'Nehal', 3, 4, 5]
 
-    if (a == b) {
-      console.log("Both are same array");
-    } else {
-      console.log("Both are not same array");
-    }
+    // // Replace (Remove + Add)
+    // arr.splice(3, 1, "Panchal");
+    // console.log(arr); // 6) [1, 2, 'Nehal', 'Panchal', 4, 5]
 
-    // ==========================
+    // // Delete
+    // arr.splice(4, 2);
+    // console.log(arr); // (4) [1, 2, 'Nehal', 'Panchal']
 
-    // Array destructuring
+    // let newArray = [4, 3, 5, 6];
+    // newArray.sort();
+    // console.log(newArray);
 
-    let myArray = [1, "Nehal", true, { id: 6 }, [33, 60]];
+    // // Copy exisiting array
+    // console.log(newArray.valueOf());
 
-    let [number, string, boolean] = myArray;
-    console.log(boolean);
+    // // ===========================
 
-    // ==========================
+    // // Array Reference (Same as object reference)
 
-    // Array Accumulator pattern (Sum of array)
+    // let array = [12, 3, 4];
+    // let array2 = array;
 
-    let num = [1, 2, 3, 4];
-    let sum = 0;
+    // array2[0] = 1;
 
-    for (let i = 0; i < num.length; i++) {
-      sum = sum + num[i];
-      console.log(sum);
-    }
+    // console.log(array);
+    // console.log(array2);
 
-    console.log(`sum is ${sum}`);
+    // let a = [1, 2];
+    // let b = [1, 2];
 
-    // ==========================
+    // if (a == b) {
+    //   console.log("Both are same array");
+    // } else {
+    //   console.log("Both are not same array");
+    // }
 
-    // Array Accumulate in Array (Sum of array)
+    // // ==========================
 
-    let numb = [12, 3, 4, 5, 6];
-    let total = [];
-    let sum2 = 0;
+    // // Array destructuring
 
-    for (let i = 0; i < numb.length; i++) {
-      total.push(numb[i] * 2);
-    }
+    // let myArray = [1, "Nehal", true, { id: 6 }, [33, 60]];
 
-    console.log(`Total array: ${total}`);
+    // let [number, string, boolean] = myArray;
+    // console.log(boolean);
+
+    // // ==========================
+
+    // // Array Accumulator pattern (Sum of array)
+
+    // let num = [1, 2, 3, 4];
+    // let sum = 0;
+
+    // for (let i = 0; i < num.length; i++) {
+    //   sum = sum + num[i];
+    //   console.log(sum);
+    // }
+
+    // console.log(`sum is ${sum}`);
+
+    // // ==========================
+
+    // // Array Accumulate in Array (Sum of array)
+
+    // let numb = [12, 3, 4, 5, 6];
+    // let total = [];
+    // let sum2 = 0;
+
+    // for (let i = 0; i < numb.length; i++) {
+    //   total.push(numb[i] * 2);
+    // }
+
+    // console.log(`Total array: ${total}`);
+
+    // Array advanced methods
+    //  1. Filter()
+
+    // Syntax: arr.filter((value,index) => return true/false)
+    let arr = [1, "Nehal", true, {}, 3, 4, false, "JavaScript", []];
+
+    let filteredVal = arr.filter((value, index) => {
+      if (typeof value === "number") {
+        return true;
+      }
+      // } else {
+      //   return false;
+      // }
+    });
+
+    console.log(filteredVal);
   </script>
 </html>
