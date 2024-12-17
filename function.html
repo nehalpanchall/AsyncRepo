@@ -14,21 +14,44 @@
         <li>3. Anonyms Function</li>
         <li>4. Callback Function</li>
         <li>5. Higher order Function</li>
+        <li>6. Arrow Function</li>
+        <li>7. setTimeout() Function</li>
+        <li>8. setInterval() Function</li>
       </ul>
     </h1>
   </body>
 
   <script>
-    const sumTwo = function (a, b) {
-      return a + b;
-    };
+    // 3. Anonyms Function
+    // const sumTwo = function (a, b) {
+    //   return a + b;
+    // };
 
-    // sumTwo = sum
-    const sumThree = function (num1, num2, num3, sum) {
-      let result = sum(num1, num2);
-      return sum(result, num3);
-    };
+    // // sumTwo = sum
+    // const sumThree = function (num1, num2, num3, sum) {
+    //   let result = sum(num1, num2);
+    //   return sum(result, num3);
+    // };
 
-    console.log(sumThree(2, 2, 2, sumTwo));
+    // console.log(sumThree(2, 2, 2, sumTwo));
+
+    // 7. setTimeout Function
+
+    function alarm() {
+      console.log("Good Morning!");
+    }
+
+    let timerId = setTimeout(alarm, 3000);
+    console.log(`TimerId: ${timerId}`);
+
+    clearTimeout(timerId);
+
+    // 8. setInterval Function
+
+    let intervalId = setInterval(() => console.log("Hello"), 1000);
+    console.log(`IntervalId: ${intervalId}`);
+
+    // clear Interval after 5 seconds
+    setTimeout(() => clearInterval(intervalId), 5000);
   </script>
 </html>
