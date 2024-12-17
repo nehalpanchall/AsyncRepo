@@ -127,14 +127,15 @@
     // Syntax: arr.filter((value,index) => return true/false)
     let arr = [1, "Nehal", true, {}, 3, 4, false, "JavaScript", []];
 
-    let filteredVal = arr.filter((value, index) => {
-      if (typeof value === "number") {
-        return true;
-      }
-      // } else {
-      //   return false;
-      // }
-    });
+    // let filteredVal = arr.filter((value, index) => {
+    //   if (typeof value === "number") {
+    //     return true;
+    //   } else {
+    //     return false;
+    //   }
+    // });
+
+    let filteredVal = arr.filter((value, index) => typeof value === "number");
 
     console.log(filteredVal);
   </script>
