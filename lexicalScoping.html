@@ -34,27 +34,44 @@
   </body>
 
   <script>
+    // Lexical scope example
+    // function outer() {
+    //   let fname = "Nehal";
+
+    //   function inner() {
+    //     let secretKey = "secret123";
+    //     console.log(`${fname} from inner()`);
+    //     console.log(`${secretKey} from inner()`);
+    //   }
+
+    //   function innerTwo() {
+    //     console.log(`${fname} from innerTwo()`);
+    //     // console.log(`${secretKey} from innerTwo()`);  => cannot access secretKey
+    //   }
+
+    //   inner();
+    //   innerTwo();
+
+    //   console.log(`${fname} from outer()`);
+    //   //   console.log(`${secretKey} from outer()`); => cannot access secretKey
+    // }
+
+    // outer();
+
+    // Clousure Example
     function outer() {
       let fname = "Nehal";
 
       function inner() {
-        let secretKey = "secret123";
-        console.log(`${fname} from inner()`);
-        console.log(`${secretKey} from inner()`);
+        console.log(`fname: ${fname} from inner`);
       }
 
-      function innerTwo() {
-        console.log(`${fname} from innerTwo()`);
-        // console.log(`${secretKey} from innerTwo()`);  => cannot access secretKey
-      }
-
-      inner();
-      innerTwo();
-
-      console.log(`${fname} from outer()`);
-      //   console.log(`${secretKey} from outer()`); => cannot access secretKey
+      //   inner();
+      return inner;
     }
 
-    outer();
+    // console.log(fname);
+    let retValue = outer();
+    retValue();
   </script>
 </html>
