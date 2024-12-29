@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hoisting</title>
+  </head>
+  <body>
+    <h1 style="color: green">Hoisting</h1>
+  </body>
+
+  <script>
+    // let and const are same
+
+    console.log(a); // undefined
+    console.log(x); // undefined
+    console.log(b); // ReferenceError: cannot access 'b' before initialization
+
+    var a = 6;
+    var abc;
+    let b = 33;
+  </script>
+</html>
