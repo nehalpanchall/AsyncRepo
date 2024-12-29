@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Variables</title>
+  </head>
+  <body>
+    <h1 style="color: green">Variables</h1>
+  </body>
+  <script>
+    // Varible declaration rules: C D S
+
+    // 1. C: Capital letter (Case sensitive)
+    // both are different variables
+    // let fname;
+    // let FNAME:
+
+    // 2. D: Digit
+    // variable name cannot start with digit. It can be either middle or at the end of the variable name
+    // let 2name; (Not allowed)
+    // let nam2e; (allowed)
+    // let name2; (allowed)
+
+    // 3. Special symbol/ character
+    // can only use $ and _ (dollar and underscore) in variable name.
+    // It can be anywhere in the variable name
+    // let $name; (allowed)
+    // let na$me; (allowed)
+    // let name$; (allowed)
+
+    // -------------------------------------------------------------------------
+
+    // Repetition, Modification, and initialization
+
+    var a = 15;
+    // 1. var
+    // Repetition is allowed (var a = 5)
+    // Modification is allowed (var a = 6)
+    // later initialization is allowed (var a;  and later a = 5;)
+
+    let b = 33;
+    // 2. let
+    // Repetition is NOT allowed (let b = 5)
+    // Modification is allowed (b = 6)
+    // later initialization is allowed (let b;  and let b = 5;)
+
+    const c = 42;
+    // 3. const
+    // Repetition is NOT allowed (const c = 5)
+    // Modification is NOT allowed (c = 6)
+    // later initialization is NOT allowed (let b;  and let b = 5;)
+    // it should be initialized in same line. cannot initialize later
+  </script>
+</html>
