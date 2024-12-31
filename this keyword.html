@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>This keyword</title>
+  </head>
+  <body>
+    <ol>
+      <h1 style="color: green">Things to remember for this keyword</h1>
+      <li>
+        JavaScript can run anywhere you want. (Ex: Browser, Node.js, Smart
+        watch, Smart bulb, Tablet, etc.)
+      </li>
+      <br />
+      <li>It just needs JavaScript Runtime Environment.</li>
+      <br />
+      <li>
+        This keyword depends on the platform on which you are running the
+        JavaScript code.
+      </li>
+      <br />
+      <li>This keyword referes to global object</li>
+      <br />
+      <li>
+        In case of <b>browser</b>, the global object is <b>window {..}</b>
+      </li>
+      <br />
+      <li>
+        In case of <b>Node.js</b>, the global object is <b>global {..}</b>
+      </li>
+      <br />
+    </ol>
+
+    <button id="thisBtn">This in DOM</button>
+  </body>
+
+  <script>
+    // 1. in browser (this keyword in a global space)
+    console.log(this); // window (global object)
+
+    //------------------------------------------------------------------------------------------
+
+    // 2. in function
+    function one() {
+      // Non-strict Mode
+      console.log(`one(): ${this}`); // window (global object)
+    }
+    one();
+
+    function two() {
+      "use strict";
+      console.log(`two(): ${this}`); // undefined
+    }
+    two();
+
+    function three() {
+      console.log(`three(): ${this}`); // window (global object)
+    }
+    three.call();
+
+    function four() {
+      "use strict";
+      console.log(`four(): ${this}`); // undefined
+    }
+    four.call();
+
+    function five() {
+      console.log(`five(): ${this}`); // {} (Empty Object)
+    }
+
+    five.call({});
+
+    function six() {
+      "use strict";
+      console.log(`six(): ${this}`); // { name: "Nehal" }
+    }
+    six.call({ name: "Nehal" });
+
+    //------------------------------------------------------------------------------------------
+
+    // 3. value of 'this' depends on how the function is called
+
+    function ninja() {
+      "use strict";
+      console.log(this);
+    }
+
+    ninja(); // undefined
+
+    window.ninja(); // window (Call a function as a method of window object)
+
+    //------------------------------------------------------------------------------------------
+
+    // 4. this keyword inside an object's method
+
+    const human = {
+      fname: "Nehal",
+      getName() {
+        // "use strict"; (It does not matter: output will be the same)
+        console.log(this);
+      },
+    };
+
+    human.getName(); // function (Method) called as a method of an object
+
+    // NOTE: (Important conclusion)
+
+    // When normal function or a method of an object is called with the reference (object), the value of this inside that function or a method will be the reference (object) itself.
+
+    // 1.
+    function pokemon() {
+      console.log(this); // window {..}
+      // can use any property or method of window object using 'this'
+    }
+
+    // (reference: window) & (Value of this: window) & (object: window)
+    window.pokemon; // Here function is called with a reference 'window'
+
+    // 2.
+    const person = {
+      fname: "Nehal",
+      getName() {
+        console.log(this); // person{fname: "Nehal", getName: f}
+        console.log(this.fname); // Nehal
+        console.log(this.lastname); // undefined
+      },
+    };
+    // (reference: person) & (Value of this: window) & (object: window)
+    person.getName(); // Here function is called with a reference 'person'
+
+    //------------------------------------------------------------------------------------------
+
+    // 4. in DOM
+
+    const btn = document.querySelector("#thisBtn");
+
+    btn.addEventListener("click", thisDOM);
+
+    function thisDOM() {
+      alert(this); // button object  (Because in DOM, all HTML elements are treated as an object)
+      alert(this.tagName); // tagName: BUTTON
+    }
+
+    //------------------------------------------------------------------------------------------
+
+    // 5. in Arrow function
+
+    // Arrow function does not have thier own this keyword binding, so when there is 'this' keyword inside an arrow function, it finds the value of this keyword from its outer lexical scope (outer parent's scope).
+    // (Global Lexical Context)
+
+    // Case: 1
+    const arrow1 = () => {
+      //   "use strict"; (It does not matter because of lack of this binding)
+      console.log(this);
+    };
+
+    arrow1(); // window
+
+    arrow1.call(); // window
+
+    arrow1.call({}); // window
+
+    // Case: 2 (Arrow function as a method of an object)
+    const animal = {
+      name: "Dog",
+      bark: () => {
+        console.log(this);
+      },
+    };
+
+    // because object does not create any scope in the execution context.
+    // so technically, the arrow function bark() is defined in the global scope, not in an object
+    // that is why the value of this will be window object
+    animal.bark(); // window
+
+    // case 3
+    const obj = {
+      name: "Nehal",
+      greet: function () {
+        console.log(this);
+      },
+    };
+
+    // NOTE: (Important conclusion)
+
+    // basically strict and non strict mode matter when we are calling function directly without any reference
+    obj.greet(); // obj {name: "Nehal", greet: f}
+
+    // case 4 (arrow function inside method)
+    const obj2 = {
+      name: "Ninja",
+      greet: function () {
+        const sayHello = () => {
+          console.log(this);
+        };
+
+        sayHello();
+      },
+    };
+
+    obj2.greet(); // obj2 {name: "Nehal", greet: f}
+
+    // case 5 (setTimeout inside method)
+    const obj3 = {
+      name: "Alice",
+      greet: function () {
+        // Start
+        setTimeout(() => {
+          console.log(this);
+        }, 1000);
+
+        // End
+      },
+    };
+
+    obj3.greet(); // obj3 {name: "Alice", greet: f} after 1 second
+  </script>
+</html>
