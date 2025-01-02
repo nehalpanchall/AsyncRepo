@@ -215,5 +215,60 @@
     };
 
     obj3.greet(); // obj3 {name: "Alice", greet: f} after 1 second
+
+    // Prior to ES6, this in JavaScript functions did not automatically inherit the this value of the surrounding lexical scope. This created confusion, especially in nested functions, because this inside an inner function would not refer to the same this as in the outer function.
+
+    // Inner functions had their own this, which could lead to confusion and context loss.
+
+    function outer() {
+      var a = 6;
+      let b = 60;
+      const c = 33;
+
+      function inner() {
+        // confusion: the value of inner() function is confusion, because there was (beofre ES6) no concept of lexical scope and no arrow function
+        console.log(`Sum: ${a + b + c}`);
+      }
+
+      inner();
+    }
+    outer();
+
+    // Developers had to use workarounds like:
+
+    // Saving this in a variable (var self = this;) and using self inside the inner function:
+
+    function outer() {
+      var self = this; // Save outer `this`
+      function inner() {
+        console.log(self.name); // Use the saved `this`
+      }
+      inner();
+    }
+
+    // Explicitly binding this
+
+    function outer() {
+      function inner() {
+        console.log(this.name);
+      }
+      inner.call(this); // Explicitly bind `this`
+    }
+
+    // Solution in ES6: Arrow Functions
+
+    function outer() {
+      this.name = "Outer";
+
+      const inner = () => {
+        console.log(this.name); // `this` is inherited from `outer`
+      };
+
+      inner();
+    }
+
+    outer(); // Output: "Outer"
+
+    // Arrow functions inherit this lexically, aligning with expectations and avoiding context confusion.
   </script>
 </html>
