@@ -1,0 +1,19 @@
+{
+  "name": "async",
+  "version": "1.0.0",
+  "description": "Custom node package",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nehalpanchall/AsyncRepo.git"
+  },
+  "author": "Nehal Panchal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nehalpanchall/AsyncRepo/issues"
+  },
+  "homepage": "https://github.com/nehalpanchall/AsyncRepo#readme"
+}
