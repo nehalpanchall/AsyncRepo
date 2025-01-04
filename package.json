@@ -4,6 +4,7 @@
   "description": "Custom node package",
   "main": "index.html",
   "scripts": {
+    "git": "git status",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

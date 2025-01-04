@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>This function</title>
+  </head>
+  <body></body>
+
+  <script>
+    function box() {
+      "use strict";
+      console.log(this);
+    }
+
+    const obj = { x: 6, box };
+
+    obj.box();
+
+    // box.call(null);
+    // box.call(undefinedl);
+
+    // // 1
+    // box();
+
+    // // 2
+    // new box();
+
+    // // 3
+    // const obj = { box };
+    // obj.box();
+
+    // // 4 : call() without a reference
+    // box.call();
+
+    // // 5:
+    // const obj1 = { name: "nehal" };
+    // box.call(obj1);
+  </script>
+</html>
