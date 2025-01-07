@@ -5,17 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>This function</title>
   </head>
-  <body></body>
+  <body>
+    <button id="btn" onclick="abc(console.log(this))">Click</button>
+  </body>
 
   <script>
-    function box() {
-      "use strict";
-      console.log(this);
-    }
+    // function box() {
+    //   "use strict";
+    //   console.log(this);
+    // }
 
-    const obj = { x: 6, box };
+    // const obj = { x: 6, box };
 
-    obj.box();
+    // obj.box();
 
     // box.call(null);
     // box.call(undefinedl);
@@ -36,5 +38,28 @@
     // // 5:
     // const obj1 = { name: "nehal" };
     // box.call(obj1);
+
+    // value of this in object's method
+
+    const obj1 = {
+      message: "Simple function",
+      sayHi: function () {
+        console.log(this);
+        console.log(this.message);
+      },
+    };
+
+    obj1.sayHi();
+
+    // using arrow function in a method
+    const obj2 = {
+      message: "Arrow Function",
+      sayHi: () => {
+        console.log(this);
+        console.log(this.message);
+      },
+    };
+
+    obj2.sayHi();
   </script>
 </html>
