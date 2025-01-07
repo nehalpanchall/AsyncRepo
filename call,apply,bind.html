@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Call(), Apply(), Bind()</title>
+  </head>
+  <body>
+    <h1>Call(), Apply(), Bind()</h1>
+  </body>
+
+  <script>
+    function ninja() {
+      "use strict";
+      let x = 6;
+      console.log(this);
+    }
+
+    ninja(); // 1. invoke without reference (non strict mode)
+
+    new ninja(); // 2. invoke using new keyword: return empty object same name of function name
+
+    // 3. invoke using reference
+    window.ninja();
+
+    obj1 = { name: "nehal" };
+
+    // 4. invoke using call() method
+    ninja.call(); // strict mode: undefined
+
+    ninja.call({}); // {}
+
+    ninja.call(obj1); // {obj1: {name: "nehal"}}
+  </script>
+</html>
