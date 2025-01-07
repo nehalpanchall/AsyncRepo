@@ -31,5 +31,29 @@
     ninja.call({}); // {}
 
     ninja.call(obj1); // {obj1: {name: "nehal"}}
+
+    // -----------------------------Call method()----------------------------------------
+
+    console.log("From Here....");
+
+    function pokemon() {
+      // this = window {..}
+      console.log(this.message); // undefined
+    }
+
+    pokemon(); // undefined: Property message is not exist in window{..} object
+
+    pokemon.call(); // undefined: Property message is not exist in window{..} object
+
+    // passed empty object as an argument: {...}
+    pokemon.call({}); // undefined: because empty object does not contain the property 'message'
+
+    pokemon.call({ x: 6 }); // undefined: because empty object does not contain the property 'message'
+
+    pokemon.call({ message: "Call() method" }); // Call() method
+
+    const myObj = { x: 6, message: "Custom message" };
+
+    pokemon.call(myObj); // Custom message: pass the object for this context
   </script>
 </html>
