@@ -60,7 +60,8 @@
     pokemon.call(myObj, [1, 2], 2);
 
     pokemon.call({ message: "message 2" }, 33, 15);
-    // -----------------------------Apply method()----------------------------------------
+
+    // -----------------------------Apply method---------------------------------------
 
     // Pass arguments in an Array
 
@@ -71,5 +72,25 @@
     const django = { message: "Hey Django" };
 
     box.apply(django, [[1, 2], 60]);
+
+    // -----------------------------Bind() method----------------------------------------
+
+    // set the value of 'this' permenantly inside the function without touching the function
+    // Returns a new function which can be invoked later whenever you want
+
+    function noddy(a, b) {
+      console.log(this.message, a, b);
+    }
+    const bindObj = { message: "hey from Bind()" };
+
+    // do not invoke function now
+    let invokeLater = noddy.bind(bindObj, 33, 15);
+    // invokeLater();
+
+    bindObj.message = "Message edits";
+    bindObj.a = 600;
+
+    // invoked later withour () moon bracket notation
+    setTimeout(invokeLater, 2000);
   </script>
 </html>
