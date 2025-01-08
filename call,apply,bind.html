@@ -36,24 +36,40 @@
 
     console.log("From Here....");
 
-    function pokemon() {
+    function pokemon(a, b) {
       // this = window {..}
-      console.log(this.message); // undefined
+      console.log(this.message, a, b); // undefined
     }
 
-    pokemon(); // undefined: Property message is not exist in window{..} object
+    // pokemon(); // undefined: Property message is not exist in window{..} object
 
-    pokemon.call(); // undefined: Property message is not exist in window{..} object
+    // pokemon.call(); // undefined: Property message is not exist in window{..} object
 
-    // passed empty object as an argument: {...}
-    pokemon.call({}); // undefined: because empty object does not contain the property 'message'
+    // // passed empty object as an argument: {...}
+    // pokemon.call({}); // undefined: because empty object does not contain the property 'message'
 
-    pokemon.call({ x: 6 }); // undefined: because empty object does not contain the property 'message'
+    // pokemon.call({ x: 6 }); // undefined: because empty object does not contain the property 'message'
 
-    pokemon.call({ message: "Call() method" }); // Call() method
+    // pokemon.call({ message: "Call() method" }); // Call() method
 
     const myObj = { x: 6, message: "Custom message" };
 
-    pokemon.call(myObj); // Custom message: pass the object for this context
+    // pokemon.call(myObj); // Custom message: pass the object for this context
+
+    // Pass comma separated arguments
+    pokemon.call(myObj, [1, 2], 2);
+
+    pokemon.call({ message: "message 2" }, 33, 15);
+    // -----------------------------Apply method()----------------------------------------
+
+    // Pass arguments in an Array
+
+    function box(a, b) {
+      console.log(this.message, a, b);
+    }
+
+    const django = { message: "Hey Django" };
+
+    box.apply(django, [[1, 2], 60]);
   </script>
 </html>
