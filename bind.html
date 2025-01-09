@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bind()</title>
+  </head>
+  <body>
+    Bind() method
+  </body>
+
+  <script>
+    function bindFun(a, b) {
+      console.log(this.message, a, b);
+    }
+
+    const bindObj = { message: "Hello Bind()" };
+
+    let invokeLater = bindFun.bind(bindObj, [6, 33], 600);
+
+    // this context is fixed
+    invokeLater.call(); // Hello Bind() [6,33] 600
+    invokeLater.call({}); // Hello Bind() [6,33] 600
+    invokeLater.call({ message: "Custom message" }); // Hello Bind() [6,33] 600
+  </script>
+</html>
