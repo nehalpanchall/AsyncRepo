@@ -18,9 +18,16 @@
 
     let invokeLater = bindFun.bind(bindObj, [6, 33], 600);
 
-    // this context is fixed
+    // this context is fixed (Permenantly set)
     invokeLater.call(); // Hello Bind() [6,33] 600
     invokeLater.call({}); // Hello Bind() [6,33] 600
     invokeLater.call({ message: "Custom message" }); // Hello Bind() [6,33] 600
+
+    // 1. Use case
+    setTimeout(() => {
+      bindFun();
+
+      bindFun.call({ message: "setTimeout" }, 33, 6); // changed this context of bindFun() function
+    }, 2000);
   </script>
 </html>
