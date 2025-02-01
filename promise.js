@@ -1,13 +1,17 @@
-const cart = ['A', 'B', 'C'];
+const cart = [];
 
 let promiseX = createOrder(cart);
-console.log(promiseX);
+// console.log(promiseX);
 
 // consumer part
-promiseX.then(function (response) {
-  let data = JSON.parse(response);
-  console.log(data); // JS object
-});
+promiseX
+  .then(function (response) {
+    let data = JSON.parse(response);
+    console.log(data); // JS object
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
 
 // producer part
 function createOrder(cart) {
