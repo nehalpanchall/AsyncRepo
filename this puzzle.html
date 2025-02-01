@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>This Puzzle</title>
+  </head>
+  <body></body>
+  <script>
+    // 1.
+    let obj = {
+      messssage: 'Hi',
+
+      showMessage: function () {
+        let message = 'Bye';
+        console.log(this); // {message: "Hi", showMessage: f}
+        console.log(this.messssage); // Hi
+      },
+    };
+
+    // call method using object reference: o/p: object
+    obj.showMessage();
+
+    // 2. same using arrow function
+    let obj2 = {
+      messssage: 'Hi',
+
+      showMessage: () => {
+        let message = 'Bye';
+        console.log(this); // window {..}
+        console.log(this.message); // undefined
+      },
+    };
+
+    // method called with reference but object does not create any scope
+    obj2.showMessage();
+
+    // 3.
+
+    function Pet(name) {
+      this.name = name;
+
+      this.getName = () => this.name;
+    }
+
+    let cat = new Pet('Fluffy');
+
+    console.log(cat); // Pet {name: "fluffy", getName: f}
+
+    console.log(cat.getName()); // fluffy
+
+    const { getName } = cat;
+    console.log(getName()); // fluffy
+
+    // 4.
+
+    let obj3 = {
+      message: 'Hello',
+
+      showMessage() {
+        console.log(this.message);
+      },
+    };
+
+    setTimeout(obj3.showMessage, 1000); // undefined (did not invoke method)
+    // setTimeout(obj3.showMessage(), 3000); // cannot immediately invoke a function in setTimeout()
+
+    // 5
+
+    // Object does not create any scope
+    let obj4 = {
+      who: 'world',
+
+      greet() {
+        // this = obj4 {who: "world", greet: f}
+        console.log(`Hello, ${this.who}`);
+      },
+
+      farewell: () => {
+        // this = window{..}
+        console.log(`Bye, ${this.who}`);
+      },
+    };
+
+    // call normal function with reference
+    obj4.greet(); // Hello, world
+
+    // call arrow function with reference
+    obj4.farewell(); // undefined (because who is not in window{..} object)
+
+    // 6. 'this' in nested object
+
+    let user = {
+      name: 'Nehal',
+      age: 27,
+
+      childObj: {
+        newName: 'Ninja',
+        getDetails() {
+          console.log(`${this.newName} and ${this.name}`);
+        },
+      },
+    };
+
+    // It does not find lexically
+    // childObj {newName: "Ninja", getDetails: f}
+    user.childObj.getDetails(); // Ninja and undefined
+
+    // in case of arrow function
+    //     childObj: {
+    //         newName: "Ninja",
+    //         getDetails() {
+    //           console.log(`${this.newName} and ${this.name}`);
+    //         },
+    //       },
+
+    // o/p: undefined and Nehal
+  </script>
+</html>
