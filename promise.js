@@ -10,7 +10,9 @@ promiseX
     console.log(data); // JS object
   })
   .catch(function (error) {
-    console.log(error);
+    console.log(error.name); // Error
+    console.log(error.message); // Cart is not valid
+    console.log(error.stack); // Error: Cart is not valid (at line number, at filename, at function)
   });
 
 // producer part
