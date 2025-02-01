@@ -16,21 +16,21 @@
       console.log(this);
     }
 
-    ninja(); // 1. invoke without reference (non strict mode)
+    // ninja(); // 1. invoke without reference (non strict mode)
 
-    new ninja(); // 2. invoke using new keyword: return empty object same name of function name
+    // new ninja(); // 2. invoke using new keyword: return empty object same name of function name
 
-    // 3. invoke using reference
-    window.ninja();
+    // // 3. invoke using reference
+    // window.ninja();
 
-    obj1 = { name: "nehal" };
+    // obj1 = { name: "nehal" };
 
-    // 4. invoke using call() method
-    ninja.call(); // strict mode: undefined
+    // // 4. invoke using call() method
+    // ninja.call(); // strict mode: undefined
 
-    ninja.call({}); // {}
+    // ninja.call({}); // {}
 
-    ninja.call(obj1); // {obj1: {name: "nehal"}}
+    // ninja.call(obj1); // {obj1: {name: "nehal"}}
 
     // -----------------------------Call method()----------------------------------------
 
@@ -52,26 +52,26 @@
 
     // pokemon.call({ message: "Call() method" }); // Call() method
 
-    const myObj = { x: 6, message: "Custom message" };
+    // const myObj = { x: 6, message: "Custom message" };
 
-    // pokemon.call(myObj); // Custom message: pass the object for this context
+    // // pokemon.call(myObj); // Custom message: pass the object for this context
 
-    // Pass comma separated arguments
-    pokemon.call(myObj, [1, 2], 2);
+    // // Pass comma separated arguments
+    // pokemon.call(myObj, [1, 2], 2);
 
-    pokemon.call({ message: "message 2" }, 33, 15);
+    // pokemon.call({ message: "message 2" }, 33, 15);
 
-    // -----------------------------Apply method---------------------------------------
+    // // -----------------------------Apply method---------------------------------------
 
-    // Pass arguments in an Array
+    // // Pass arguments in an Array
 
-    function box(a, b) {
-      console.log(this.message, a, b);
-    }
+    // function box(a, b) {
+    //   console.log(this.message, a, b);
+    // }
 
-    const django = { message: "Hey Django" };
+    // const django = { message: "Hey Django" };
 
-    box.apply(django, [[1, 2], 60]);
+    // box.apply(django, [[1, 2], 60]);
 
     // -----------------------------Bind() method----------------------------------------
 
@@ -87,10 +87,15 @@
     let invokeLater = noddy.bind(bindObj, 33, 15);
     // invokeLater();
 
-    bindObj.message = "Message edits";
-    bindObj.a = 600;
+    // bindObj.message = "Message edits";
+    // bindObj.a = 600;
 
     // invoked later withour () moon bracket notation
-    setTimeout(invokeLater, 2000);
+    // setTimeout(invokeLater, 2000);
+    // invokeLater();
+
+    // invokeLater.call({});
+
+    invokeLater();
   </script>
 </html>
