@@ -33,3 +33,4 @@ for (let i of arr) {
 
 for (let i in arr) {
   console.log('for..in: ', i);
+}
