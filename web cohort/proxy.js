@@ -9,10 +9,11 @@ const person = {
 
 const customProxy = new Proxy(person, {
   get(target, prop) {
-    console.log('Target object: ', target);
-    console.log('property (key): ', prop);
+    if (prop === 'password') {
+      throw new Error('Access is denied');
+    }
     return target[prop];
   },
 });
 
-console.log('returned property from get() handler (value): ', customProxy.id);
+console.log(customProxy.password);
