@@ -4,16 +4,33 @@ const person = {
   password: 'xyz123',
 };
 
-// proxyPerson object will use in place of original object 'person'
-// proxyPerson will redefine the operations like setting, getting, and defining property
-
 const customProxy = new Proxy(person, {
   get(target, prop) {
     if (prop === 'password') {
-      throw new Error('Access is denied');
+      throw new Error('Access denied');
     }
     return target[prop];
   },
+
+  set(target, prop, value, receiver) {
+    console.log('property: ', prop);
+    console.log('target: ', target);
+    console.log('value is: ', value);
+
+    console.log('Receiver: ', receiver);
+    if (prop === 'id') {
+      // skip it and only returns true to prevent modification in original object
+      target[prop] = value; // set the value in target object through proxy object
+      return true;
+    }
+    return false;
+  },
 });
 
-console.log(customProxy.password);
+// get password : access denied in error
+console.log(`get(): ${customProxy.id}`);
+
+// set
+customProxy.id = 33;
+console.log('Original object: ', person);
+console.log('Proxy object: ', customProxy);
